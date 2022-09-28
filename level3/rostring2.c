@@ -6,7 +6,7 @@
 /*   By: clecat <clecat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 11:42:10 by clecat            #+#    #+#             */
-/*   Updated: 2022/09/28 16:03:16 by clecat           ###   ########.fr       */
+/*   Updated: 2022/09/28 17:06:02 by clecat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,13 +86,23 @@ int main(int argc, char **argv)
 		j = 0;
 		while(argv[1][i] == ' ' || argv[1][i] == '\t')
 			i++;
-		end = i;
+		end = i + 1;
 		printf("i = %d\n", i);
 		printf("end = %d\n", end);
 		while(argv[1][i] != '\0')
 		{
-			if()
-			i++;
+			while(argv[1][i] != ' ' || argv[1][i] != '\t')
+				i++;
+			while(argv[1][i] == ' ' || argv[1][i] == '\t')
+				i++;
+			if(argv[1][i] >= 33 && argv[1][i] <= 126)
+			{
+				str[j] = argv[1][i];
+				j++;
+				i++;
+			}
+			if(argv[1][i] != '\0')
+				i++;
 		}
     }
     write(1, "\n", 1);

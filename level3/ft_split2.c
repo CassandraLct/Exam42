@@ -6,7 +6,7 @@
 /*   By: clecat <clecat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 15:48:19 by clecat            #+#    #+#             */
-/*   Updated: 2022/09/28 10:44:05 by clecat           ###   ########.fr       */
+/*   Updated: 2022/09/29 13:53:50 by clecat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char    **ft_split(char *str)
 		{
 			j++;
 			if(str[i + 1] == 32 || (str[i + 1] >= 9 && str[i + 1] <= 13) 
-				|| (str[i + 1] == '\0'))//  && (str[i] != 32 || (str[i] < 9 && str[i] > 13))))
+				|| (str[i + 1] == '\0'))
 			{
 				word += 1;
 				len_w[y] = j;
@@ -53,7 +53,6 @@ char    **ft_split(char *str)
 		j = 0;
 		i++;
     }
-	//printf("word = %d\n", word);
 	i = 0;
 	y = 0;
 	tab = malloc(sizeof(char *) * word + 1);
@@ -62,19 +61,16 @@ char    **ft_split(char *str)
 	{
 		if(str[i] >= 33 && str[i] <= 126)
 		{
-			//printf("len_w = %d\n", len_w[y]);
 			tab[y] = malloc(sizeof(char) * len_w[y] + 1);
 			y++;	
 		}
 		while(str[i] >= 33 && str[i] <= 126)
 		{
 			tab[j][k] = str[i];
-			//printf("str[i] = %c\n", str[i]);
 			k++;
 			i++;
 			if(str[i + 1] == 32 || str[i + 1] == '\0' || (str[i + 1] >= 9 && str[i + 1] <= 13))
 			{
-				//printf("str[i] = %c\n", str[i]);
 				tab[j][k] = str[i];
 				if(str[i] != '\0')
 					tab[j][k + 1] = '\0';

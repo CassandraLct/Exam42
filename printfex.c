@@ -9,7 +9,7 @@
 /*   Updated: 2022/01/17 09:42:02 by clecat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+//ancien exam rk02 peut etre utiliser pour le new exam rk03 passer le 18.10.2022
 #include <unistd.h>
 #include <stdarg.h>
 #include <stdio.h>

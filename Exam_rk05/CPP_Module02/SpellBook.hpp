@@ -6,7 +6,7 @@
 /*   By: clecat <clecat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 17:22:31 by clecat            #+#    #+#             */
-/*   Updated: 2023/04/27 17:28:24 by clecat           ###   ########.fr       */
+/*   Updated: 2023/05/03 12:32:06 by clecat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SPELLBOOK_H
 
 #include "Aspell.hpp"
+#include <map>
 
 class SpellBook{
 
@@ -26,6 +27,7 @@ class SpellBook{
 		Aspell *	createSpell(std::string const & src); //that receives a string corresponding to the name of a spell, creates it, and returns it.
 
 	private:
+		std::map<std::string, Aspell *> arr_spell;
 		SpellBook(SpellBook const & src);
 		SpellBook &	operator=(SpellBook const & rhs);
 };
